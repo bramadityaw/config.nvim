@@ -237,6 +237,10 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+---@type vim.filetype.add.filetypes
+local filetypes = require 'filetypes'
+vim.filetype.add(filetypes)
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
