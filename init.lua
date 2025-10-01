@@ -122,7 +122,7 @@ end)
 vim.o.breakindent = true
 
 -- Enable deleting current line instead of getting stuck at the line's start
-vim.o.backspace = 'eol'
+vim.o.backspace = 'eol,indent,start'
 
 -- Save undo history
 vim.o.undofile = true
