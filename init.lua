@@ -241,6 +241,15 @@ rtp:prepend(lazypath)
 local filetypes = require 'filetypes'
 vim.filetype.add(filetypes)
 
+vim.api.nvim_create_autocmd('User', {
+  desc = 'Install other treesitter parsers',
+  pattern = 'TSUpdate',
+  callback = function()
+    local parsers = require 'nvim-treesitter.parsers'
+    parsers.koka = require 'koka.treesitter'
+  end,
+})
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
