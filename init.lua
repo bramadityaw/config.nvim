@@ -250,6 +250,14 @@ vim.api.nvim_create_autocmd('User', {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Treat blade templates as html',
+  pattern = 'blade',
+  callback = function()
+    vim.bo.filetype = 'html'
+  end,
+})
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
